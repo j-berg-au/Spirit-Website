@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<!-- Pure CSS-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@2.2.0/build/pure-min.css"
+    integrity="sha384-7UE2/aLxcikvluV1XGghN2k6i+LoAwMjrZb4oVT9gGPPcLd2sjqAtgIinHb11RJz" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+<style>
+    @font-face {
+        font-family: Fantasya;
+        src: url("./fonts/fantasya.otf") format("opentype");
+    }
+
+    html {
+        background-color: #121212;
+        color: white;
+        font-family: Fantasya;
+    }
+
+    .hr1 {
+        overflow: visible;
+        height: 30px;
+        border-style: solid;
+        border-color: aquamarine;
+        border-width: 1px 0 0 0;
+        border-radius: 40px;
+        width: 50%;
+    }
+
+    .hr1:before {
+        display: block;
+        content: "";
+        height: 30px;
+        margin-top: -31px;
+        border-style: solid;
+        border-color: aquamarine;
+        border-width: 0 0 1px 0;
+        border-radius: 40px;
+    }
+
+    .hr2 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+    }
+
+    .CompanionSkill {
+        margin-left: 10px;
+        text-align: center;
+    }
+    .CompanionResist {
+        margin-left: 10px;
+        text-align: center;
+        font-size: larger;
+    }
+
+    .EnvoySkill {
+        margin-right: 10px;
+        text-align: center;
+    }
+
+    .EnvoyResist {
+        margin-right: 10px;
+        text-align: center;
+        font-size: larger;
+    }
+    .ResistLabel {
+        font-size: larger;
+    }
+    td {
+        text-align: center;
+    }
+    #EnvoyData {
+        margin-right: auto; 
+        padding-right: 1em;
+        font-size: large;
+        border: 1px outset aquamarine;
+        border-radius: 10px;
+        padding-left: 7px;
+    }
+    #CompanionData {
+        margin-left: auto; 
+        padding-left: 1em;
+        font-size: large;
+        text-align: right;
+        border: 1px outset aquamarine;
+        border-radius: 10px;
+        padding-right: 7px;
+    }
+    #EnvoyTitle {
+        margin-right: auto; 
+        padding-right: 1em;
+        font-size: x-large;
+    }
+    #CompanionTitle {
+        margin-left: auto; 
+        padding-left: 1em;
+        font-size: x-large;
+        text-align: right;
+    }
+    #HPBox {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 3px;
+        width: 100px;
+        border-color: aquamarine;
+        border-radius: 100px;
+        border-width: 2px;
+        border-style: outset;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+    #ManaBox {
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 3px;
+        width: 100px;
+        border-color: aquamarine;
+        border-radius: 100px;
+        border-width: 2px;
+        border-style: outset;
+        text-align: center;
+    }
+    #HPCurrent {
+        font-size: xx-large;
+    }
+    #ManaCurrent {
+        font-size: xx-large;
+    }
+    input {
+        width: 70%;
+        text-align: center;
+        border: 0;
+        border-radius: 10px;
+        border-color: aquamarine;
+        padding-left: 12px;
+        background-color: #E6EEF7;
+    }
+</style>
+
+<html>
+
+<head>
+    <title>Character Sheet</title>
+</head>
+
+<body>
+    <div class="pure-g" style="width:75%; margin-right:auto; margin-left:auto; padding-top: 10px;">
+        <div class="pure-u-1-2">
+            <div id="EnvoyData">
+                    <div id="EnvoyTitle">Envoy</div>
+                    <div id="EnvoyName"></div>
+                    <div id="EnvoyHeritage"></div>
+                    <div id="EnvoyClass"></div>
+            </div>
+            <!--Envoy Pic-->
+            <div id="EnvoyPic"><img></div>
+        </div>
+        <div class="pure-u-1-2">
+            <div id="CompanionData">
+                    <div id="CompanionTitle">Companion</div>
+                    <div id="CompanionName" style="text-align:right"></div>
+                    <div id="CompanionSpecies" style="text-align: right;"></div>
+                    <div id="CompanionType" style="text-align:right"></div>
+            </div>
+            <!--Companion Pic-->
+            <div id="CompanionPic"><img></div>
+        </div>
+    </div>
+    <div class="pure-g">
+        <div class="pure-u-2-5">
+            <!--Envoy Features & Stuff-->
+            <div id="EnvoyBox"></div>
+        </div>
+        <div class="pure-u-1-5">
+            <!--HP & Mana-->
+            <div id="HPBox">
+                HP
+                <br>
+                <div style="margin-top: 10px; margin-bottom: 10px;"><input type="number" id="HPCurrent" min="0"></div>
+                <div id="HPMax"></div>
+            </div>
+            <div id="ManaBox">
+                Mana
+                <div style="margin-top: 10px; margin-bottom: 10px;"><input type="number" id="ManaCurrent" min="0"></div>
+                <div id="ManaMax"></div>
+            </div>
+            <!--Skills & Stuff-->
+            <hr class="hr1">
+            <table style="margin-left: auto; margin-right:auto;">
+                <tr>
+                    <td><div id="EnvoyInsight" class="EnvoyResist"></div></td>
+                    <td class="ResistLabel">INSIGHT</td>
+                    <td><div id="CompanionInsight" class="CompanionResist"></div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyCraft" class="EnvoySkill"></div></td>
+                    <td>Craft</td>
+                    <td><div class="CompanionSkill">-</div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyPatch" class="EnvoySkill"></div></td>
+                    <td>Patch</td>
+                    <td><div class="CompanionSkill">-</div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyShoot" class="EnvoySkill"></div></td>
+                    <td>Shoot</td>
+                    <td><div class="CompanionSkill">-</div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyTrack" class="EnvoySkill"></div></td>
+                    <td>Track</td>
+                    <td><div id="CompanionTrack" class="CompanionSkill"></div></td>
+                </tr>
+            </table>
+            <br>
+            <hr class="hr1">
+            <table style="margin-left: auto; margin-right:auto;">
+                <tr>
+                    <td><div id="EnvoyProwess" class="EnvoyResist"></div></td>
+                    <td class="ResistLabel">PROWESS</td>
+                    <td><div id="CompanionProwess" class="CompanionResist"></div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyMove" class="EnvoySkill"></div></td>
+                    <td>Move</td>
+                    <td><div id="CompanionMove" class="CompanionSkill"></div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyMuscle" class="EnvoySkill"></div></td>
+                    <td>Muscle</td>
+                    <td><div id="CompanionMuscle" class="CompanionSkill"></div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoySkulk" class="EnvoySkill"></div></td>
+                    <td>Skulk</td>
+                    <td><div id="CompanionSkulk" class="CompanionSkill"></div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyStrike" class="EnvoySkill"></div></td>
+                    <td>Strike</td>
+                    <td><div id="CompanionStrike" class="CompanionSkill"></div></td>
+                </tr>
+            </table>
+            <br>
+            <hr class="hr1">
+            <table style="margin-left: auto; margin-right:auto; text-align: center;">
+                <tr>
+                    <td><div id="EnvoyResolve" class="EnvoyResist"></div></td>
+                    <td class="ResistLabel">RESOLVE</td>
+                    <td><div id="CompanionResolve" class="CompanionResist"></div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyPersuade" class="EnvoySkill"></div></td>
+                    <td>Persuade</td>
+                    <td><div class="CompanionSkill">-</div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyScare" class="EnvoySkill"></div></td>
+                    <td>Scare</td>
+                    <td><div id="CompanionScare" class="CompanionSkill"></div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoySpirit" class="EnvoySkill"></div></td>
+                    <td>Spirit</td>
+                    <td><div id="CompanionSpirit" class="CompanionSkill"></div></td>
+                </tr>
+                <tr>
+                    <td><div id="EnvoyTame" class="EnvoySkill"></div></td>
+                    <td>Tame</td>
+                    <td><div id="CompanionTame" class="CompanionSkill"></div></td>
+                </tr>
+            </table>
+            <br>
+            <hr class="hr1">
+        </div>
+        <div class="pure-u-2-5">
+            <!--Companion Features & Stuff-->
+            <div id="CompanionBox"></div>
+        </div>
+    </div>
+    
+    <script>
+        fetch('./Characters/testCharacter.json')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+                updateResistances();
+                setMaxVals();
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            document.getElementById("EnvoyName").innerHTML = data.envoy.name;
+            document.getElementById("EnvoyClass").innerHTML = data.envoy.class;
+            document.getElementById("EnvoyHeritage").innerHTML = data.envoy.heritage;
+            document.getElementById("CompanionName").innerHTML = data.companion.name;
+            document.getElementById("CompanionType").innerHTML = data.companion.type;
+            document.getElementById("CompanionSpecies").innerHTML = data.companion.species;
+
+            document.getElementById("EnvoyCraft").innerHTML = data.envoy.skills.craft;
+            document.getElementById("EnvoyPatch").innerHTML = data.envoy.skills.patch;
+            document.getElementById("EnvoyShoot").innerHTML = data.envoy.skills.shoot;
+            document.getElementById("EnvoyTrack").innerHTML = data.envoy.skills.track;
+            document.getElementById("EnvoyMove").innerHTML = data.envoy.skills.move;
+            document.getElementById("EnvoySkulk").innerHTML = data.envoy.skills.skulk;
+            document.getElementById("EnvoyStrike").innerHTML = data.envoy.skills.strike;
+            document.getElementById("EnvoyMuscle").innerHTML = data.envoy.skills.muscle;
+            document.getElementById("EnvoyPersuade").innerHTML = data.envoy.skills.persuade;
+            document.getElementById("EnvoyScare").innerHTML = data.envoy.skills.scare;
+            document.getElementById("EnvoySpirit").innerHTML = data.envoy.skills.spirit;
+            document.getElementById("EnvoyTame").innerHTML = data.envoy.skills.tame;
+
+            document.getElementById("EnvoyInsight").innerHTML = data.envoy.resistance.insight;
+            document.getElementById("EnvoyProwess").innerHTML = data.envoy.resistance.prowess;
+            document.getElementById("EnvoyResolve").innerHTML = data.envoy.resistance.resolve;
+
+            document.getElementById("CompanionTrack").innerHTML = data.companion.skills.track;
+            document.getElementById("CompanionSkulk").innerHTML = data.companion.skills.skulk;
+            document.getElementById("CompanionMove").innerHTML = data.companion.skills.move;
+            document.getElementById("CompanionStrike").innerHTML = data.companion.skills.strike;
+            document.getElementById("CompanionTame").innerHTML = data.companion.skills.tame;
+            document.getElementById("CompanionSpirit").innerHTML = data.companion.skills.spirit;
+            document.getElementById("CompanionScare").innerHTML = data.companion.skills.scare;
+            document.getElementById("CompanionMuscle").innerHTML = data.companion.skills.muscle;
+
+            document.getElementById("CompanionInsight").innerHTML = data.companion.resistance.insight;
+            document.getElementById("CompanionProwess").innerHTML = data.companion.resistance.prowess;
+            document.getElementById("CompanionResolve").innerHTML = data.companion.resistance.resolve;
+            
+            document.getElementById("HPMax").innerHTML = data.max_hp;
+            document.getElementById("HPCurrent").value = data.current_hp;
+            document.getElementById("ManaMax").innerHTML = data.max_mana;
+            document.getElementById("ManaCurrent").value = data.current_mana;
+        }
+        function updateResistances() {
+            var envoyinsight = 0;
+            if (Number(document.getElementById("EnvoyCraft").innerHTML) > 0) {
+                envoyinsight++;
+            }
+            if (Number(document.getElementById("EnvoyPatch").innerHTML) > 0) {
+                envoyinsight++;
+            }
+            if (Number(document.getElementById("EnvoyShoot").innerHTML) > 0) {
+                envoyinsight++;
+            }
+            if (Number(document.getElementById("EnvoyTrack").innerHTML) > 0) {
+                envoyinsight++;
+            }
+            document.getElementById("EnvoyInsight").innerHTML = envoyinsight;
+            
+            var envoyprowess = 0;
+            if (Number(document.getElementById("EnvoyMove").innerHTML) > 0) {
+                envoyprowess++;
+            }
+            if (Number(document.getElementById("EnvoyMuscle").innerHTML) > 0) {
+                envoyprowess++;
+            }
+            if (Number(document.getElementById("EnvoySkulk").innerHTML) > 0) {
+                envoyprowess++;
+            }
+            if (Number(document.getElementById("EnvoyStrike").innerHTML) > 0) {
+                envoyprowess++;
+            }
+            document.getElementById("EnvoyProwess").innerHTML = envoyprowess;
+
+            var envoyresolve = 0;
+            if (Number(document.getElementById("EnvoyPersuade").innerHTML) > 0) {
+                envoyresolve++;
+            }
+            if (Number(document.getElementById("EnvoyScare").innerHTML) > 0) {
+                envoyresolve++;
+            }
+            if (Number(document.getElementById("EnvoySpirit").innerHTML) > 0) {
+                envoyresolve++;
+            }
+            if (Number(document.getElementById("EnvoyTame").innerHTML) > 0) {
+                envoyresolve++;
+            }
+            document.getElementById("EnvoyResolve").innerHTML = envoyresolve;
+
+
+            var companioninsight = 0;
+            if (Number(document.getElementById("CompanionTrack").innerHTML) > 0) {
+                companioninsight++;
+            }
+            document.getElementById("CompanionInsight").innerHTML = companioninsight;
+            
+            var companionprowess = 0;
+            if (Number(document.getElementById("CompanionMove").innerHTML) > 0) {
+                companionprowess++;
+            }
+            if (Number(document.getElementById("CompanionMuscle").innerHTML) > 0) {
+                companionprowess++;
+            }
+            if (Number(document.getElementById("CompanionSkulk").innerHTML) > 0) {
+                companionprowess++;
+            }
+            if (Number(document.getElementById("CompanionStrike").innerHTML) > 0) {
+                companionprowess++;
+            }
+            document.getElementById("CompanionProwess").innerHTML = companionprowess;
+
+            var companionresolve = 0;
+            if (Number(document.getElementById("CompanionScare").innerHTML) > 0) {
+                companionresolve++;
+            }
+            if (Number(document.getElementById("CompanionSpirit").innerHTML) > 0) {
+                companionresolve++;
+            }
+            if (Number(document.getElementById("CompanionTame").innerHTML) > 0) {
+                companionresolve++;
+            }
+            document.getElementById("CompanionResolve").innerHTML = companionresolve;
+        }
+
+        function setMaxVals() {
+            var HPCurr = document.getElementById("HPCurrent");
+            HPCurr.max = document.getElementById("HPMax").innerHTML;
+
+            var ManaCurr = document.getElementById("ManaCurrent");
+            ManaCurr.max = document.getElementById("ManaMax").innerHTML;
+        }
+
+    </script>
+</body>
+
+</html>

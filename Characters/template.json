@@ -1,0 +1,72 @@
+{
+    "envoy": {
+        "name": "Envoy Name",
+        "class": "Envoy Class",
+        "heritage": "Envoy Heritage",
+        "skills": {
+            "craft": 0,
+            "patch": 0,
+            "track": 0,
+            "strike": 0,
+            "shoot": 0,
+            "scare": 0,
+            "persuade": 0,
+            "spirit": 0,
+            "skulk": 0,
+            "move": 0,
+            "tame": 0,
+            "muscle": 0
+        },
+        "resistance": {
+            "insight": 0,
+            "prowess": 0,
+            "resolve": 0
+        },
+        "features": [
+
+        ],
+        "description": {
+            "age": 0,
+            "gender": null,
+            "pronouns": null
+        },
+        "xp": 0,
+        "sp": 0
+    },
+    "companion": {
+        "name": "Companion Name",
+        "type": "Companion Type",
+        "species": "Companion Species",
+        "skills": {
+            "strike": 0, 
+            "track": 0,
+            "move": 0,
+            "skulk": 0,
+            "tame": 0,
+            "spirit": 0,
+            "scare": 0,
+            "muscle": 0
+        },
+        "resistance": {
+            "insight": 0,
+            "prowess": 0,
+            "resolve": 0
+        },
+        "features": [
+
+        ],
+        "description": {
+            "age": 0,
+            "gender": null,
+            "pronouns": null
+        },
+        "xp": 0,
+        "sp": 0
+    },
+    "max_hp": 0,
+    "current_hp": 0,
+    "max_mana": 0,
+    "current_mana": 0,
+    "equipment": [],
+    "notes": "Here is my journal"
+}

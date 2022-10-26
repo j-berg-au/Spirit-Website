@@ -1,0 +1,10 @@
+To Do Now:
+- Add Navbar
+- Make Current HP/Mana update in JSON
+- Add Features/Notes/Description/Equipment/Friends tabs
+- Styling
+- Add hover to show description for each skill
+- Light/dark mode
+- Somewhere to put traumas/scars (next to Envoy name?)
+- Place to put xp/sp (above features box?)
+- Sunrise button (next to companion name? "saying goodbye for now")

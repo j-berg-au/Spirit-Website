@@ -1,0 +1,72 @@
+{
+    "envoy": {
+        "name": "Cole Skyman",
+        "class": "Whisper",
+        "heritage": "Desert",
+        "skills": {
+            "craft": 1,
+            "patch": 0,
+            "track": 2,
+            "strike": 0,
+            "shoot": 1,
+            "scare": 0,
+            "persuade": 0,
+            "spirit": 3,
+            "skulk": 0,
+            "move": 0,
+            "tame": 0,
+            "muscle": 1
+        },
+        "resistance": {
+            "insight": 0,
+            "prowess": 0,
+            "resolve": 0
+        },
+        "features": [
+
+        ],
+        "description": {
+            "age": 27,
+            "gender": "Male",
+            "pronouns": "He/Him"
+        },
+        "xp": 0,
+        "sp": 0
+    },
+    "companion": {
+        "name": "Oasis",
+        "type": "Reptile",
+        "species": "Snake",
+        "skills": {
+            "strike": 1, 
+            "track": 1,
+            "move": 0,
+            "skulk": 2,
+            "tame": 0,
+            "spirit": 0,
+            "scare": 2,
+            "muscle": 0
+        },
+        "resistance": {
+            "insight": 0,
+            "prowess": 0,
+            "resolve": 0
+        },
+        "features": [
+
+        ],
+        "description": {
+            "age": 16,
+            "gender": "Female",
+            "pronouns": "She/Her"
+        },
+        "xp": 0,
+        "sp": 0
+    },
+    "max_hp": 30,
+    "current_hp": 15,
+    "max_mana": 8,
+    "current_mana": 5,
+    "equipment": [],
+    "notes": "Here is my journal"
+}
