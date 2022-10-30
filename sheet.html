@@ -10,13 +10,14 @@
 <style>
     @font-face {
         font-family: Fantasya;
-        src: url("./fonts/fantasya.otf") format("opentype");
+        src: url("fonts/Fantasya Font by Zeppelin Graphics/Fantasya.otf") format("opentype");
+        font-weight: normal;
+        font-size: normal;
     }
 
     html {
         background-color: #121212;
         color: white;
-        font-family: Fantasya;
     }
 
     .hr1 {
@@ -41,138 +42,544 @@
     }
 
     .hr2 {
-    border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
     }
 
     .CompanionSkill {
         margin-left: 10px;
         text-align: center;
+        font-family: Fantasya;
     }
+
     .CompanionResist {
         margin-left: 10px;
         text-align: center;
         font-size: larger;
+        font-family: Fantasya;
     }
 
     .EnvoySkill {
         margin-right: 10px;
         text-align: center;
+        font-family: Fantasya;
     }
 
     .EnvoyResist {
         margin-right: 10px;
         text-align: center;
         font-size: larger;
+        font-family: Fantasya;
     }
+
     .ResistLabel {
         font-size: larger;
+        font-family: Fantasya;
     }
+
     td {
         text-align: center;
+        font-family: Fantasya;
     }
+
     #EnvoyData {
-        margin-right: auto; 
-        padding-right: 1em;
+        margin-right: auto;
+        margin-bottom: 10px;
         font-size: large;
         border: 1px outset aquamarine;
         border-radius: 10px;
         padding-left: 7px;
+        font-family: Fantasya;
     }
+
     #CompanionData {
-        margin-left: auto; 
-        padding-left: 1em;
+        margin-left: auto;
+        margin-bottom: 10px;
         font-size: large;
         text-align: right;
         border: 1px outset aquamarine;
         border-radius: 10px;
         padding-right: 7px;
+        font-family: Fantasya;
     }
+
     #EnvoyTitle {
-        margin-right: auto; 
+        margin-right: auto;
         padding-right: 1em;
-        font-size: x-large;
+        font-size: xx-large;
+        font-family: Fantasya;
     }
+
     #CompanionTitle {
-        margin-left: auto; 
+        margin-left: auto;
         padding-left: 1em;
-        font-size: x-large;
+        font-size: xx-large;
         text-align: right;
+        font-family: Fantasya;
     }
+
     #HPBox {
         margin-left: auto;
         margin-right: auto;
-        padding-top: 3px;
-        width: 100px;
+        padding-top: 10px;
+        width: 110px;
         border-color: aquamarine;
         border-radius: 100px;
         border-width: 2px;
         border-style: outset;
         text-align: center;
         margin-bottom: 10px;
+        font-family: Fantasya;
     }
+
     #ManaBox {
         margin-left: auto;
         margin-right: auto;
-        padding-top: 3px;
-        width: 100px;
+        padding-top: 10px;
+        width: 110px;
         border-color: aquamarine;
         border-radius: 100px;
         border-width: 2px;
         border-style: outset;
         text-align: center;
+        font-family: Fantasya;
     }
+
     #HPCurrent {
         font-size: xx-large;
     }
+
     #ManaCurrent {
         font-size: xx-large;
     }
+
     input {
-        width: 70%;
+        width: 50%;
         text-align: center;
         border: 0;
         border-radius: 10px;
         border-color: aquamarine;
-        padding-left: 12px;
-        background-color: #E6EEF7;
+        background-color: #2D3033;
+        color: white;
     }
+
+    .EditButton {
+        background: none;
+        border-radius: 5px;
+        border-color: aquamarine;
+        border-style: outset;
+        border-width: 2px;
+        font-family: Fantasya;
+        transition-duration: 0.4s;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-top: 0%;
+        color: white;
+        float: top;
+    }
+
+    .EditButton:hover {
+        background-color: cadetblue;
+    }
+
+    .EditButton:active {
+        background-color: white;
+    }
+
+    .EXPBox {
+        margin-left: auto;
+        text-align: center;
+        font-family: Fantasya;
+        border-color: aquamarine;
+        border-radius: 100px;
+        border-width: 2px;
+        border-style: outset;
+        width: 75px;
+    }
+
+    .CXPBox {
+        margin-right: auto;
+        text-align: center;
+        font-family: Fantasya;
+        border-color: aquamarine;
+        border-radius: 100px;
+        border-width: 2px;
+        border-style: outset;
+        width: 75px;
+    }
+
+    .XP {
+        width: 35%;
+        padding: 5%;
+        font-size: x-large;
+    }
+
+    #SunsetButton {
+        position: static;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-right: 0%;
+        margin-top: 30%;
+    }
+
+    #SunriseButton {
+        position: static;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin-left: 0%;
+        margin-top: 30%;
+    }
+
+    #EnvoyBox {
+        height: 700px;
+        width: 65%;
+        border-color: aquamarine;
+        border-width: 2px;
+        border-style: outset;
+        border-radius: 10px;
+        margin-left: 34.5%;
+        margin-top: 2%;
+    }
+
+    #CompanionBox {
+        height: 700px;
+        width: 65%;
+        border-color: aquamarine;
+        border-width: 2px;
+        border-style: outset;
+        border-radius: 10px;
+        margin-left: 0%;
+        margin-top: 2%;
+    }
+
+    .tooltip {
+        position: relative;
+        display: inline-block;
+        /* If you want dots under the hoverable text */
+    }
+
+    /* Tooltip text */
+    .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 150px;
+        background-color: #004242;
+        color: #fff;
+        text-align: center;
+        padding: 5px 0;
+        border-radius: 6px;
+
+        /* Position the tooltip text - see examples below! */
+        position: absolute;
+        z-index: 1;
+
+        bottom: 100%;
+        left: 50%;
+        margin-left: -75px;
+        /* Use half of the width (120/2 = 60), to center the tooltip */
+
+        opacity: 0;
+        transition: opacity 1s;
+    }
+
+    /* Show the tooltip text when you mouse over the tooltip container */
+    .tooltip:hover .tooltiptext {
+        visibility: visible;
+        opacity: 0.85;
+    }
+
+    .tooltip .tooltiptext::after {
+        content: " ";
+        position: absolute;
+        top: 100%;
+        /* At the bottom of the tooltip */
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+    }
+
+    .profilepic {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        border-radius: 50%;
+        display: block;
+        box-shadow: 
+        0px 0px 5px aquamarine,
+        0px 0px 10px #fff;
+    }
+
+    #CompanionPic {
+        margin-left: 2%;
+        float: left;
+    }
+
+    #EnvoyPic {
+        margin-right: 2%;
+        float: right;
+    }
+
+    .Envoytablinks {
+        font-size: small;
+        height: 80px;
+        width: 25px;
+        background-color: #2D3033;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: #484d52;
+    }
+
+    .Envoytablinks:hover {
+        background-color: #004242;
+    }
+
+    .Envoytablinks:active {
+        background-color:black;
+    }
+
+    #Envoytab {
+        padding-top: 1px;
+        padding-left: 1px;
+        height: 700px;
+        width: 25px;
+        display: block;
+        float: left;
+    }
+
+    .EnvoyTabLabel {
+        transform: rotate(-90deg) translateX(-32px);
+        transform-origin: 0px 0 px;
+        color: white;
+    }
+
+    .EnvoyTabContent {
+        display: none;
+        padding: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        animation: fadeEffect 1s;
+        overflow: auto;
+        text-align: right;
+    }
+
+    .Companiontablinks {
+        font-size: small;
+        height: 80px;
+        width: 25px;
+        background-color: #2D3033;
+        border-radius: 5px;
+        border-style: solid;
+        border-color: #484d52;
+    }
+
+    .Companiontablinks:hover {
+        background-color: #004242;
+    }
+
+    .Companiontablinks:active {
+        background-color:black;
+    }
+
+    #Companiontab {
+        padding-top: 1px;
+        padding-right: 1px;
+        height: 700px;
+        width: 25px;
+        display: block;
+        float: right;
+    }
+
+    .CompanionTabLabel {
+        transform: rotate(90deg) translateX(-32px);
+        transform-origin: 0px 0 px;
+        color: white;
+    }
+
+    .CompanionTabContent {
+        display: none;
+        padding: 10px;
+        padding-right: 10px;
+        padding-left: 10px;
+        animation: fadeEffect 1s;
+        overflow: auto;
+    }
+
+    .DescriptionTable {
+        width: 100%;
+        text-align: center;
+    }
+
+    .LongInput {
+        width: 97%;
+        font-size: small;
+        background-color: #2D3033;
+        color: white;
+    }
+
+    @keyframes fadeEffect {
+        from {opacity: 0;}
+        to {opacity: 1;}
+    }
+
 </style>
 
 <html>
 
 <head>
     <title>Character Sheet</title>
+    <meta charset="UTF-8" />
 </head>
 
 <body>
     <div class="pure-g" style="width:75%; margin-right:auto; margin-left:auto; padding-top: 10px;">
         <div class="pure-u-1-2">
             <div id="EnvoyData">
-                    <div id="EnvoyTitle">Envoy</div>
-                    <div id="EnvoyName"></div>
-                    <div id="EnvoyHeritage"></div>
-                    <div id="EnvoyClass"></div>
+                <div class="pure-g">
+                    <div class="pure-u-1-2">
+                        <div style="font-family:Fantasya; font-size:large;">
+                            <div id="EnvoyTitle">Envoy</div>
+                            <div id="EnvoyName">EnvoyName</div>
+                            <div id="EnvoyHeritage">EnvoyHeritage</div>
+                            <div id="EnvoyClass">EnvoyClass</div>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2">
+                                <button id="SunriseButton" class="EditButton">Sunrise</button>
+                            </div>
+                            <div class="pure-u-1-2">
+                                <!--Envoy Pic-->
+                                <img id="EnvoyPic" class="profilepic" src="./images/envoy.jpg">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!--Envoy Pic-->
-            <div id="EnvoyPic"><img></div>
         </div>
         <div class="pure-u-1-2">
             <div id="CompanionData">
-                    <div id="CompanionTitle">Companion</div>
-                    <div id="CompanionName" style="text-align:right"></div>
-                    <div id="CompanionSpecies" style="text-align: right;"></div>
-                    <div id="CompanionType" style="text-align:right"></div>
+                <div class="pure-g">
+                    <div class="pure-u-1-2">
+                        <div class="pure-g">
+                            <div class="pure-u-1-2">
+                                <!--Companion Pic-->
+                                <img id="CompanionPic" class="profilepic" src="./images/MooseCompanion.jpg">
+                            </div>
+                            <div class="pure-u-1-2">
+                                <button id="SunsetButton" class="EditButton">Sunset</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pure-u-1-2">
+                        <div style="font-family:Fantasya; font-size:large;">
+                            <div id="CompanionTitle">Companion</div>
+                            <div id="CompanionName" style="text-align:right">CompanionName</div>
+                            <div id="CompanionSpecies" style="text-align: right;">CompanionSpecies</div>
+                            <div id="CompanionType" style="text-align:right">CompanionType</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!--Companion Pic-->
-            <div id="CompanionPic"><img></div>
         </div>
     </div>
     <div class="pure-g">
         <div class="pure-u-2-5">
             <!--Envoy Features & Stuff-->
-            <div id="EnvoyBox"></div>
+            <div class="pure-g" style="margin-left: auto; width: 67%">
+                <div class="pure-u-1-3">
+                    <div style="text-align:center;">
+                        <button class="EditButton" id="EnvoyEdit">Edit</button>
+                        <hr style="color:white;">
+                        <!--Traumas-->
+                        <div style="font-family: fantasya; text-align: center;">Mind Traumas</div>
+                        <table style="font-size: small;">
+                            <tr>
+                                <td>Cold</td>
+                                <td>Haunted</td>
+                                <td>Obsessed</td>
+                            </tr>
+                            <tr>
+                                <td>Soft</td>
+                                <td>Reckless</td>
+                                <td>Paranoid</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="pure-u-1-3">
+                    <div class="EXPBox">
+                        <div style="margin-top: 10px; margin-bottom: 10px;"><input type="number" id="EnvoyXP" min="0"
+                                class="XP" max="9"></div>
+                        XP
+                    </div>
+                </div>
+                <div class="pure-u-1-3">
+                    <div class="EXPBox">
+                        <div style="margin-top: 10px; margin-bottom: 10px;"><input type="number" id="EnvoyAP" min="0"
+                                class="XP" max="9"></div>
+                        AP
+                    </div>
+                </div>
+            </div>
+            <div id="EnvoyBox">
+                <div id="Envoytab" style="float: left;">
+                    <button id="EnvoyDefault" class="Envoytablinks" onclick="openEnvoyTab(event, 'EnvoyFeatures')"><div class="EnvoyTabLabel">Features</div></button>
+                    <button class="Envoytablinks" onclick="openEnvoyTab(event, 'EnvoyEquipment')"><div class="EnvoyTabLabel">Equipment</div></button>
+                    <button class="Envoytablinks" onclick="openEnvoyTab(event, 'EnvoyConnections')"><div class="EnvoyTabLabel">Connections</div></button>
+                    <button class="Envoytablinks" onclick="openEnvoyTab(event, 'EnvoyDescription')"><div class="EnvoyTabLabel">Description</div></button>
+                    <button class="Envoytablinks" onclick="openEnvoyTab(event, 'EnvoyNotes')"><div class="EnvoyTabLabel">Notes</div></button>
+                </div>
+                <div id="EnvoyContent">
+                    <div id="EnvoyFeatures" class="EnvoyTabContent">
+                        Features will be here!
+                    </div>
+                    <div id="EnvoyEquipment" class="EnvoyTabContent">
+                        <h3>Equipment</h3>
+                        <textarea id="Equipment" class="LongInput" rows="40">
+                            
+                        </textarea>
+                    </div>
+                    <div id="EnvoyConnections" class="EnvoyTabContent">
+                        Connections will be here!
+                    </div>
+                    <div id="EnvoyDescription" class="EnvoyTabContent">
+                        <table class="DescriptionTable">
+                            <tr>
+                                <th>Name</th>
+                                <th>Pronouns</th>
+                                <th>Gender</th>
+                                <th>Age</th>
+                                <th>Height</th>
+                            </tr>
+                            <tr>
+                                <td><div id="EnvoyDescName"></div></td>
+                                <td><div id="EnvoyPronouns"></div></td>
+                                <td><div id="EnvoyGender"></div></td>
+                                <td><div id="EnvoyAge"></div></td>
+                                <td><div id="EnvoyHeight"></div></td>
+                            </tr>
+                        </table>
+                        <h4>Appearance</h4>
+                        <textarea id="EnvoyAppearance" class="LongInput" rows="15">
+
+                        </textarea>
+                        <h4>Personality</h4>
+                        <textarea id="EnvoyPersonality" class="LongInput" rows="15">
+                            
+                        </textarea>
+
+                    </div>
+                    <div id="EnvoyNotes" class="EnvoyTabContent">
+                        <h3>Notes</h3>
+                        <textarea id="EnvoyNotesInput" class="LongInput" rows="40">
+                            
+                        </textarea>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="pure-u-1-5">
             <!--HP & Mana-->
@@ -191,87 +598,190 @@
             <hr class="hr1">
             <table style="margin-left: auto; margin-right:auto;">
                 <tr>
-                    <td><div id="EnvoyInsight" class="EnvoyResist"></div></td>
-                    <td class="ResistLabel">INSIGHT</td>
-                    <td><div id="CompanionInsight" class="CompanionResist"></div></td>
+                    <td>
+                        <div id="EnvoyInsight" class="EnvoyResist"></div>
+                    </td>
+                    <td class="ResistLabel">
+                        <div class="tooltip">INSIGHT <span class="tooltiptext">Resist a consequence
+                                through intelligence</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionInsight" class="CompanionResist"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyCraft" class="EnvoySkill"></div></td>
-                    <td>Craft</td>
-                    <td><div class="CompanionSkill">-</div></td>
+                    <td>
+                        <div id="EnvoyCraft" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Craft <span class="tooltiptext">Create alchemical items, gadgets, or other
+                                items</span></div>
+                    </td>
+                    <td>
+                        <div class="CompanionSkill">-</div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyPatch" class="EnvoySkill"></div></td>
-                    <td>Patch</td>
-                    <td><div class="CompanionSkill">-</div></td>
+                    <td>
+                        <div id="EnvoyPatch" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Patch<span class="tooltiptext">Bandage someone up, or create herbal
+                                remedies or poisons</span></div>
+                    </td>
+                    <td>
+                        <div class="CompanionSkill">-</div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyShoot" class="EnvoySkill"></div></td>
-                    <td>Shoot</td>
-                    <td><div class="CompanionSkill">-</div></td>
+                    <td>
+                        <div id="EnvoyShoot" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Shoot<span class="tooltiptext">Shoot a bow, crossbow, or similar ranged
+                                weapon</span></div>
+                    </td>
+                    <td>
+                        <div class="CompanionSkill">-</div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyTrack" class="EnvoySkill"></div></td>
-                    <td>Track</td>
-                    <td><div id="CompanionTrack" class="CompanionSkill"></div></td>
+                    <td>
+                        <div id="EnvoyTrack" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Track<span class="tooltiptext">Track a creature, search an area, or set up
+                                a trap</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionTrack" class="CompanionSkill"></div>
+                    </td>
                 </tr>
             </table>
             <br>
             <hr class="hr1">
             <table style="margin-left: auto; margin-right:auto;">
                 <tr>
-                    <td><div id="EnvoyProwess" class="EnvoyResist"></div></td>
-                    <td class="ResistLabel">PROWESS</td>
-                    <td><div id="CompanionProwess" class="CompanionResist"></div></td>
+                    <td>
+                        <div id="EnvoyProwess" class="EnvoyResist"></div>
+                    </td>
+                    <td class="ResistLabel">
+                        <div class="tooltip">PROWESS<span class="tooltiptext">Resist a consequence with reflexes or
+                                physical strength</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionProwess" class="CompanionResist"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyMove" class="EnvoySkill"></div></td>
-                    <td>Move</td>
-                    <td><div id="CompanionMove" class="CompanionSkill"></div></td>
+                    <td>
+                        <div id="EnvoyMove" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Move<span class="tooltiptext">Run, swim, climb, or otherwise move
+                                quickly</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionMove" class="CompanionSkill"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyMuscle" class="EnvoySkill"></div></td>
-                    <td>Muscle</td>
-                    <td><div id="CompanionMuscle" class="CompanionSkill"></div></td>
+                    <td>
+                        <div id="EnvoyMuscle" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Muscle<span class="tooltiptext">Lift, throw, push, pull, or otherwise exert
+                                your strength</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionMuscle" class="CompanionSkill"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoySkulk" class="EnvoySkill"></div></td>
-                    <td>Skulk</td>
-                    <td><div id="CompanionSkulk" class="CompanionSkill"></div></td>
+                    <td>
+                        <div id="EnvoySkulk" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Skulk<span class="tooltiptext">Move stealthily, or handle an item without
+                                being noticed</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionSkulk" class="CompanionSkill"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyStrike" class="EnvoySkill"></div></td>
-                    <td>Strike</td>
-                    <td><div id="CompanionStrike" class="CompanionSkill"></div></td>
+                    <td>
+                        <div id="EnvoyStrike" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Strike<span class="tooltiptext">Attack a creature with a melee weapon or
+                                your body</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionStrike" class="CompanionSkill"></div>
+                    </td>
                 </tr>
             </table>
             <br>
             <hr class="hr1">
             <table style="margin-left: auto; margin-right:auto; text-align: center;">
                 <tr>
-                    <td><div id="EnvoyResolve" class="EnvoyResist"></div></td>
-                    <td class="ResistLabel">RESOLVE</td>
-                    <td><div id="CompanionResolve" class="CompanionResist"></div></td>
+                    <td>
+                        <div id="EnvoyResolve" class="EnvoyResist"></div>
+                    </td>
+                    <td class="ResistLabel">
+                        <div class="tooltip">RESOLVE<span class="tooltiptext">Resist a consequence with willpower or
+                                social prowess</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionResolve" class="CompanionResist"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyPersuade" class="EnvoySkill"></div></td>
-                    <td>Persuade</td>
-                    <td><div class="CompanionSkill">-</div></td>
+                    <td>
+                        <div id="EnvoyPersuade" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Persuade<span class="tooltiptext">Convince or deceive others</span></div>
+                    </td>
+                    <td>
+                        <div class="CompanionSkill">-</div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyScare" class="EnvoySkill"></div></td>
-                    <td>Scare</td>
-                    <td><div id="CompanionScare" class="CompanionSkill"></div></td>
+                    <td>
+                        <div id="EnvoyScare" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Scare<span class="tooltiptext">Intimidate or frighten others</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionScare" class="CompanionSkill"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoySpirit" class="EnvoySkill"></div></td>
-                    <td>Spirit</td>
-                    <td><div id="CompanionSpirit" class="CompanionSkill"></div></td>
+                    <td>
+                        <div id="EnvoySpirit" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Spirit<span class="tooltiptext">Interact with spirit magic or use your
+                                spiritual abilities</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionSpirit" class="CompanionSkill"></div>
+                    </td>
                 </tr>
                 <tr>
-                    <td><div id="EnvoyTame" class="EnvoySkill"></div></td>
-                    <td>Tame</td>
-                    <td><div id="CompanionTame" class="CompanionSkill"></div></td>
+                    <td>
+                        <div id="EnvoyTame" class="EnvoySkill"></div>
+                    </td>
+                    <td>
+                        <div class="tooltip">Tame<span class="tooltiptext">Convince a creature you mean no harm, or have
+                                it view you as an ally</span></div>
+                    </td>
+                    <td>
+                        <div id="CompanionTame" class="CompanionSkill"></div>
+                    </td>
                 </tr>
             </table>
             <br>
@@ -279,10 +789,89 @@
         </div>
         <div class="pure-u-2-5">
             <!--Companion Features & Stuff-->
-            <div id="CompanionBox"></div>
+            <div class="pure-g" style="margin-right: auto; width: 67%">
+                <div class="pure-u-1-3">
+                    <div class="CXPBox">
+                        <div style="margin-top: 10px; margin-bottom: 10px;"><input type="number" id="CompanionAP"
+                                min="0" class="XP" max="9"></div>
+                        AP
+                    </div>
+                </div>
+                <div class="pure-u-1-3">
+                    <div class="CXPBox">
+                        <div style="margin-top: 10px; margin-bottom: 10px;"><input type="number" id="CompanionXP"
+                                min="0" class="XP" max="9"></div>
+                        XP
+                    </div>
+                </div>
+                <div class="pure-u-1-3">
+                    <div style="text-align:center;direction: rtl;">
+                        <button class="EditButton" id="CompanionEdit">Edit</button>
+                        <hr style="color:white;">
+                        <!--Traumas-->
+                        <div style="font-family: fantasya; text-align: center;">Body Traumas</div>
+                        <table style="font-size: small;">
+                            <tr>
+                                <td>Tired</td>
+                                <td>Internal</td>
+                                <td>Amputee</td>
+                            </tr>
+                            <tr>
+                                <td>Weak</td>
+                                <td>Scarring</td>
+                                <td><nobr>Lost-Sense</nobr></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div id="CompanionBox">
+                <div id="Companiontab" style="float: right;">
+                    <button id="CompanionDefault" class="Companiontablinks" onclick="openCompanionTab(event, 'CompanionFeatures')"><div class="CompanionTabLabel">Features</div></button>
+                    <button class="Companiontablinks" onclick="openCompanionTab(event, 'CompanionDescription')"><div class="CompanionTabLabel">Description</div></button>
+                    <button class="Companiontablinks" onclick="openCompanionTab(event, 'CompanionNotes')"><div class="CompanionTabLabel">Notes</div></button>
+                </div>
+                <div id="CompanionContent">
+                    <div id="CompanionFeatures" class="CompanionTabContent">
+                        Features will be here!
+                    </div>
+                    <div id="CompanionDescription" class="CompanionTabContent">
+                        <table class="DescriptionTable">
+                            <tr>
+                                <th>Name</th>
+                                <th>Pronouns</th>
+                                <th>Gender</th>
+                                <th>Age</th>
+                                <th>Height</th>
+                            </tr>
+                            <tr>
+                                <td><div id="CompanionDescName"></div></td>
+                                <td><div id="CompanionPronouns"></div></td>
+                                <td><div id="CompanionGender"></div></td>
+                                <td><div id="CompanionAge"></div></td>
+                                <td><div id="CompanionHeight"></div></td>
+                            </tr>
+                        </table>
+                        <h4>Appearance</h4>
+                        <textarea id="CompanionAppearance" class="LongInput" rows="15">
+
+                        </textarea>
+                        <h4>Personality</h4>
+                        <textarea id="CompanionPersonality" class="LongInput" rows="15">
+                            
+                        </textarea>
+                    </div>
+                    <div id="CompanionNotes" class="CompanionTabContent">
+                        <h3>Notes</h3>
+                        <textarea id="CompanionNotesInput" class="LongInput" rows="40">
+                            
+                        </textarea>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    
+
     <script>
         fetch('./Characters/testCharacter.json')
             .then(function (response) {
@@ -292,6 +881,8 @@
                 appendData(data);
                 updateResistances();
                 setMaxVals();
+                document.getElementById("EnvoyDefault").click();
+                document.getElementById("CompanionDefault").click();
             })
             .catch(function (err) {
                 console.log('error: ' + err);
@@ -333,11 +924,38 @@
             document.getElementById("CompanionInsight").innerHTML = data.companion.resistance.insight;
             document.getElementById("CompanionProwess").innerHTML = data.companion.resistance.prowess;
             document.getElementById("CompanionResolve").innerHTML = data.companion.resistance.resolve;
-            
+
             document.getElementById("HPMax").innerHTML = data.max_hp;
             document.getElementById("HPCurrent").value = data.current_hp;
             document.getElementById("ManaMax").innerHTML = data.max_mana;
             document.getElementById("ManaCurrent").value = data.current_mana;
+
+            document.getElementById("EnvoyXP").value = data.envoy.xp;
+            document.getElementById("EnvoyAP").value = data.envoy.ap;
+            document.getElementById("CompanionXP").value = data.companion.xp;
+            document.getElementById("CompanionAP").value = data.companion.ap;
+
+            document.getElementById("EnvoyDescName").innerHTML = data.envoy.name;
+            document.getElementById("EnvoyPronouns").innerHTML = data.envoy.description.pronouns;
+            document.getElementById("EnvoyGender").innerHTML = data.envoy.description.gender;
+            document.getElementById("EnvoyAge").innerHTML = data.envoy.description.age;
+            document.getElementById("EnvoyHeight").innerHTML = data.envoy.description.height;
+
+            document.getElementById("CompanionDescName").innerHTML = data.companion.name;
+            document.getElementById("CompanionPronouns").innerHTML = data.companion.description.pronouns;
+            document.getElementById("CompanionGender").innerHTML = data.companion.description.gender;
+            document.getElementById("CompanionAge").innerHTML = data.companion.description.age;
+            document.getElementById("CompanionHeight").innerHTML = data.companion.description.height;
+
+            document.getElementById("EnvoyAppearance").value = data.envoy.description.appearance;
+            document.getElementById("EnvoyPersonality").value = data.envoy.description.personality;
+            document.getElementById("EnvoyNotesInput").value = data.envoy.notes;
+
+            document.getElementById("CompanionAppearance").value = data.companion.description.appearance;
+            document.getElementById("CompanionPersonality").value = data.companion.description.personality;
+            document.getElementById("CompanionNotesInput").value = data.companion.notes;
+
+            document.getElementById("Equipment").value = data.equipment;
         }
         function updateResistances() {
             var envoyinsight = 0;
@@ -354,7 +972,7 @@
                 envoyinsight++;
             }
             document.getElementById("EnvoyInsight").innerHTML = envoyinsight;
-            
+
             var envoyprowess = 0;
             if (Number(document.getElementById("EnvoyMove").innerHTML) > 0) {
                 envoyprowess++;
@@ -391,7 +1009,7 @@
                 companioninsight++;
             }
             document.getElementById("CompanionInsight").innerHTML = companioninsight;
-            
+
             var companionprowess = 0;
             if (Number(document.getElementById("CompanionMove").innerHTML) > 0) {
                 companionprowess++;
@@ -428,6 +1046,39 @@
             ManaCurr.max = document.getElementById("ManaMax").innerHTML;
         }
 
+        function openEnvoyTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            tabcontent=document.getElementsByClassName("EnvoyTabContent");
+            for (i = 0; i< tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("Envoytablinks");
+            for (i=0; i< tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "")
+            }
+
+            document.getElementById(tabName).style.display = 'block';
+            evt.currentTarget.className += " active";
+        }
+
+        function openCompanionTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+
+            tabcontent=document.getElementsByClassName("CompanionTabContent");
+            for (i = 0; i< tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("Companiontablinks");
+            for (i=0; i< tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "")
+            }
+
+            document.getElementById(tabName).style.display = 'block';
+            evt.currentTarget.className += " active";
+        }
     </script>
 </body>
 

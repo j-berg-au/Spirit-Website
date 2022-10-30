@@ -28,15 +28,19 @@
         "description": {
             "age": 27,
             "gender": "Male",
-            "pronouns": "He/Him"
+            "pronouns": "He/Him",
+            "height": "5ft 10in",
+            "appearance": "Really cool looking",
+            "personality": "Super Edgy"
         },
-        "xp": 0,
-        "sp": 0
+        "xp": 1,
+        "ap": 2,
+        "notes": "Here is my Envoy journal"
     },
     "companion": {
         "name": "Oasis",
-        "type": "Reptile",
-        "species": "Snake",
+        "type": "Beast",
+        "species": "Moose",
         "skills": {
             "strike": 1, 
             "track": 1,
@@ -58,15 +62,18 @@
         "description": {
             "age": 16,
             "gender": "Female",
-            "pronouns": "She/Her"
+            "pronouns": "She/Her",
+            "height": "7ft 3in",
+            "appearance": "Really big and cool",
+            "personality": "Does whateva they want ya know"
         },
-        "xp": 0,
-        "sp": 0
+        "xp": 3,
+        "ap": 4,
+        "notes": "Here is my Companion journal"
     },
     "max_hp": 30,
     "current_hp": 15,
     "max_mana": 8,
     "current_mana": 5,
-    "equipment": [],
-    "notes": "Here is my journal"
+    "equipment": "most op sword eva"
 }
