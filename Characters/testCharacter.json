@@ -57,7 +57,14 @@
             "resolve": 0
         },
         "features": [
-
+            {
+                "name": "testFeature",
+                "description": "This is a test feature"
+            },
+            {
+                "name": "testFeature2",
+                "description": "This is a SECOND test feature"
+            }
         ],
         "description": {
             "age": 16,
@@ -75,5 +82,46 @@
     "current_hp": 15,
     "max_mana": 8,
     "current_mana": 5,
-    "equipment": "most op sword eva"
+    "equipment": "most op sword eva",
+    "trauma": {
+        "mind": {
+            "cold": false,
+            "haunted": true,
+            "obsessed": false,
+            "soft": false,
+            "reckless": false,
+            "paranoid": false
+        },
+        "body": {
+            "amputee": false,
+            "internal": false,
+            "tired": false,
+            "lost-sense": false,
+            "scarred": true,
+            "weak": false
+        }
+    },
+    "connections": [
+        {
+            "name": "Adam",
+            "rival": false,
+            "friend": false,
+            "occupation": "",
+            "notes": ""
+        },
+        {
+            "name": "Ben",
+            "rival": true,
+            "friend": false,
+            "occupation": "",
+            "notes": ""
+        },
+        {
+            "name": "Cass",
+            "rival": false,
+            "friend": true,
+            "occupation": "",
+            "notes": ""
+        }
+    ]
 }

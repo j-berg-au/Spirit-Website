@@ -71,5 +71,24 @@
     "current_hp": 0,
     "max_mana": 0,
     "current_mana": 0,
-    "equipment": []
+    "equipment": [],
+    "trauma": {
+        "mind": {
+            "cold": false,
+            "haunted": false,
+            "obsessed": false,
+            "soft": false,
+            "reckless": false,
+            "paranoid": false
+        },
+        "body": {
+            "amputee": false,
+            "internal": false,
+            "tired": false,
+            "lost-sense": false,
+            "scarred": false,
+            "weak": false
+        }
+    },
+    "connections": []
 }

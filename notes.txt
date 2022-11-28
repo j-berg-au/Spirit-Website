@@ -1,9 +1,14 @@
 To Do Now:
 - Add Navbar
-- Make Current HP/Mana update in JSON
-- Develop EnvoyBox and CompanionBox
+- Make changes update in JSON
+- Develop Features & Connections tabs
 - Styling
 - Light/dark mode (parchment+ink/dark+spirit)
 - Working Trauma buttons
 - Change HP/Mana/XP to center value and use buttons
 - Use AI for art
+- Sidebar to edit Description info
+- Sidebar for game rules info
+- No sign in system, everyone can see everyone's Characters
+  But no one can delete (to prevent people deleting each others
+  characters, only admin (me) can delete)
